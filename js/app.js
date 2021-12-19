@@ -29,7 +29,7 @@ const loadDom = () => {
   const mainHeader = document.querySelector(".main__hero");
   const menuLinks = document.querySelectorAll(".menu_link");
   let windowHeight = window.innerHeight;
-  let timeOut1, timeOut2;
+  let timeOut1;
   /**
  * End Global Variables
  
