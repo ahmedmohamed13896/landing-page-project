@@ -27,8 +27,8 @@ const loadDom = () => {
   const header = document.querySelector(".page__header");
   const navbarList = document.getElementById("navbar__list");
   const mainHeader = document.querySelector(".main__hero");
-  const menuLinks = document.querySelectorAll(".menu_link");
   let windowHeight = window.innerHeight;
+  let menuLinks;
   let timeOut1;
   /**
  * End Global Variables
@@ -67,6 +67,7 @@ const loadDom = () => {
                 </li>`;
     }
     navbarList.innerHTML = navHTML;
+    menuLinks = document.querySelectorAll(".menu__link");
   };
 
   // Add class 'active' to section when near top of viewport
@@ -77,7 +78,7 @@ const loadDom = () => {
     currentSection.classList.add("active");
   };
   // Scroll to anchor ID using scrollTO event
-  const scrollToSection = (e) => {
+  const scrollToSection = function (e) {
     e.preventDefault();
     const currentSection = document.getElementById(e.target.dataset.section);
     const sectionOffset = currentSection.offsetTop;
@@ -114,3 +115,4 @@ const loadDom = () => {
 };
 
 document.addEventListener("DOMContentLoaded", loadDom);
+
